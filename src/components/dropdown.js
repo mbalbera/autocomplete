@@ -9,7 +9,7 @@ function Dropdown(props) {
         let selected = dictonary.filter(word => word.includes(props.typed))
         all = selected.map(s =>
             <div>
-                <p>{s}</p>
+                <p  onClick={(event)=>props.onChosen(event)}>{s}</p>
             </div>
         )
     }
