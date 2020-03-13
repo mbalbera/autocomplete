@@ -19,12 +19,17 @@ class Dropdown extends React.Component {
             all = ""
         }else{
             let selected = []
-            dictonary.forEach(word => {
-                if(word.includes(this.props.typed)&& selected.length < 6){
+            for (let i = 0; selected.length < 5 || i > dictionary.length; i++){
+                if(dictonary[i].includes(this.props.typed)){
                     selected.push(word)
                 }
+            }
+            // dictonary.forEach(word => {
+            //     if(word.includes(this.props.typed)&& selected.length < 6){
+            //         selected.push(word)
+            //     }
             
-            })
+            // })
             all = selected.map(s =>
                 <ul style={{listStyle: 'none'}}>
                     <li onClick={(event) => this.props.onChosen(event)}>{s}</li>
